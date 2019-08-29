@@ -1,0 +1,10 @@
+cc_library_headers {
+    name: "libboost_parameter_headers",
+    header_libs: [
+        "libboost_mp11_headers",
+    ],
+    export_header_lib_headers: [
+        "libboost_mp11_headers",
+    ],
+    export_include_dirs: [ "include" ],
+}

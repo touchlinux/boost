@@ -1,0 +1,4 @@
+cc_library_headers {
+    name: "libboost_preprocessor_headers",
+    export_include_dirs: [ "include", ],
+}

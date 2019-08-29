@@ -1,0 +1,10 @@
+cc_library_headers {
+    name: "libboost_container_hash_headers",
+    header_libs: [
+        "libboost_detail_headers",
+    ],
+    export_header_lib_headers: [
+        "libboost_detail_headers",
+    ],
+    export_include_dirs: [ "include", ],
+}

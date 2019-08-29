@@ -1,0 +1,17 @@
+cc_library_headers {
+    name: "libboost_core_headers",
+    header_libs: [
+        "libboost_config_headers",
+    ],
+    export_header_lib_headers: [
+        "libboost_config_headers",
+    ],
+
+    export_include_dirs: [ "include" ],
+
+    target: {
+        linux_bionic: {
+            enabled: true,
+        },
+    }
+}

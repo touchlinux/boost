@@ -1,0 +1,26 @@
+cc_library_headers {
+    name: "libboost_msm_headers",
+    header_libs: [
+        "libboost_mpl_headers",
+        "libboost_fusion_headers",
+        "libboost_bind_headers",
+        "libboost_function_headers",
+        "libboost_serialization_headers",
+        "libboost_parameter_headers",
+        "libboost_proto_headers",
+        "libboost_tuple_headers",
+        "libboost_any_headers",
+    ],
+    export_header_lib_headers: [
+        "libboost_mpl_headers",
+        "libboost_fusion_headers",
+        "libboost_bind_headers",
+        "libboost_function_headers",
+        "libboost_serialization_headers",
+        "libboost_parameter_headers",
+        "libboost_proto_headers",
+        "libboost_tuple_headers",
+        "libboost_any_headers",
+    ],
+    export_include_dirs: [ "include" ],
+}

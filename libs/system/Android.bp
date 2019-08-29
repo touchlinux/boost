@@ -1,0 +1,41 @@
+
+inc_common_dirs = [
+    "external/boost/libs/config/include",
+    "external/boost/libs/winapi/include",
+]
+
+cc_library_headers {
+    name: "libboost_system_headers",
+    header_libs: [
+        "libboost_config_headers",
+        "libboost_winapi_headers",
+    ],
+    export_header_lib_headers: [
+        "libboost_config_headers",
+        "libboost_winapi_headers",
+    ],
+
+    export_include_dirs: [ "include" ],
+}
+
+cc_library_shared {
+    name: "libboost_system",
+
+    srcs: [
+        "src/error_code.cpp",
+    ],
+
+    header_libs: ["libboost_system_headers"],
+    export_header_lib_headers: ["libboost_system_headers"],
+
+    cppflags: [
+        "-std=c++11",
+        "-stdlib=libc++",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-variadic-macros",
+    ],
+}

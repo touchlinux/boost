@@ -1,0 +1,4 @@
+cc_library_headers {
+    name: "libboost_tuple_headers",
+    export_include_dirs: [ "include" ],
+}
