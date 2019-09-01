@@ -14,6 +14,7 @@ cc_library_headers {
         "libboost_lexical_cast_headers",
         "libboost_tuple_headers",
         "libboost_exception_headers",
+        "libboost_optional_headers",
     ],
     export_header_lib_headers: [
         "libboost_config_headers",
@@ -29,6 +30,7 @@ cc_library_headers {
         "libboost_lexical_cast_headers",
         "libboost_tuple_headers",
         "libboost_exception_headers",
+        "libboost_optional_headers",
     ],
     export_include_dirs: [ "include" ],
 }
@@ -40,7 +42,6 @@ cc_library_shared {
     srcs: [
         "src/future.cpp",
         "src/tss_null.cpp",
-        "src/pthread/once.cpp",
         "src/pthread/once_atomic.cpp",
         "src/pthread/thread.cpp",
     ],
