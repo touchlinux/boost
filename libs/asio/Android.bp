@@ -1,0 +1,8 @@
+cc_library_headers {
+    name: "libboost_asio_headers",
+    header_libs: [
+    ],
+    export_header_lib_headers: [
+    ],
+    export_include_dirs: [ "include" ],
+}

@@ -1,19 +1,33 @@
-
-inc_common_dirs = [
-    "external/boost/libs/assert/include",
-    "external/boost/libs/config/include",
-    "external/boost/libs/core/include",
-    "external/boost/libs/smart_ptr/include",
-    "external/boost/libs/throw_exception/include",
-    "external/boost/libs/tuple/include",
-    "external/boost/libs/type_traits/include",
-]
+cc_library_headers {
+    name: "libboost_exception_headers",
+    header_libs: [
+        "libboost_assert_headers",
+        "libboost_config_headers",
+        "libboost_core_headers",
+        "libboost_smart_ptr_headers",
+        "libboost_throw_exception_headers",
+        "libboost_tuple_headers",
+        "libboost_type_traits_headers",
+    ],
+    export_header_lib_headers: [
+        "libboost_assert_headers",
+        "libboost_config_headers",
+        "libboost_core_headers",
+        "libboost_smart_ptr_headers",
+        "libboost_throw_exception_headers",
+        "libboost_tuple_headers",
+        "libboost_type_traits_headers",
+    ],
+    export_include_dirs: [ "include" ],
+}
 
 cc_library_static {
     name: "libboost_exception",
 
-    include_dirs: inc_common_dirs,
-    local_include_dirs: [ ".", "include", ],
+    header_libs: [ "libboost_exception_headers" ],
+    srcs: [
+        "src/clone_current_exception_non_intrusive.cpp",
+    ],
 
     cppflags: [
         "-std=c++11",

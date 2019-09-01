@@ -1,0 +1,10 @@
+cc_library_headers {
+    name: "libboost_range_headers",
+    header_libs: [
+        "libboost_concept_check_headers",
+    ],
+    export_header_lib_headers: [
+        "libboost_concept_check_headers",
+    ],
+    export_include_dirs: [ "include", ],
+}

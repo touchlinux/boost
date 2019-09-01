@@ -1,0 +1,70 @@
+cc_library_headers {
+    name: "libboost_thread_headers",
+    header_libs: [
+        "libboost_config_headers",
+        "libboost_core_headers",
+        "libboost_type_traits_headers",
+        "libboost_move_headers",
+        "libboost_date_time_headers",
+        "libboost_chrono_headers",
+        "libboost_bind_headers",
+        "libboost_io_headers",
+        "libboost_atomic_headers",
+        "libboost_algorithm_headers",
+        "libboost_lexical_cast_headers",
+        "libboost_tuple_headers",
+        "libboost_exception_headers",
+    ],
+    export_header_lib_headers: [
+        "libboost_config_headers",
+        "libboost_core_headers",
+        "libboost_type_traits_headers",
+        "libboost_move_headers",
+        "libboost_date_time_headers",
+        "libboost_chrono_headers",
+        "libboost_bind_headers",
+        "libboost_io_headers",
+        "libboost_atomic_headers",
+        "libboost_algorithm_headers",
+        "libboost_lexical_cast_headers",
+        "libboost_tuple_headers",
+        "libboost_exception_headers",
+    ],
+    export_include_dirs: [ "include" ],
+}
+
+cc_library_shared {
+    name: "libboost_thread",
+
+    header_libs: [ "libboost_thread_headers", ],
+    srcs: [
+        "src/future.cpp",
+        "src/tss_null.cpp",
+        "src/pthread/once.cpp",
+        "src/pthread/once_atomic.cpp",
+        "src/pthread/thread.cpp",
+    ],
+
+    shared_libs: [
+        "libboost_atomic",
+        "libboost_chrono",
+        "libboost_system",
+    ],
+
+    cppflags: [
+        "-std=c++11",
+        "-stdlib=libc++",
+        "-Wextra",
+        "-Wno-long-long",
+        "-Wunused-function",
+        "-Wno-variadic-macros",
+        "-Wno-unused-parameter",
+        "-Wno-non-virtual-dtor",
+        "-fexceptions",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+}

@@ -1,0 +1,14 @@
+cc_library_headers {
+    name: "libboost_algorithm_headers",
+    header_libs: [
+        "libboost_iterator_headers",
+        "libboost_range_headers",
+        "libboost_function_headers",
+    ],
+    export_header_lib_headers: [
+        "libboost_iterator_headers",
+        "libboost_range_headers",
+        "libboost_function_headers",
+    ],
+    export_include_dirs: [ "include", ],
+}

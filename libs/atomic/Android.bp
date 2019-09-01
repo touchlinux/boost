@@ -1,0 +1,31 @@
+cc_library_headers {
+    name: "libboost_atomic_headers",
+    header_libs: [
+        "libboost_assert_headers",
+        "libboost_config_headers",
+        "libboost_type_traits_headers",
+    ],
+    export_header_lib_headers: [
+        "libboost_assert_headers",
+        "libboost_config_headers",
+        "libboost_type_traits_headers",
+    ],
+    export_include_dirs: ["include"],
+}
+
+cc_library_shared {
+    name: "libboost_atomic",
+
+    header_libs: [ "libboost_atomic_headers" ],
+    srcs: [ "src/lockpool.cpp" ],
+
+    cppflags: [
+        "-std=c++11",
+        "-stdlib=libc++",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+}
